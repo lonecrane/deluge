@@ -99,6 +99,7 @@ class TorrentOptions(dict):
             self[opt_k] = config[conf_k]
         self["file_priorities"] = []
         self["mapped_files"] = {}
+        self["seed_mode"] = False
 
 
 class TorrentError(object):
