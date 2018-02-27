@@ -409,6 +409,8 @@ class AddTorrentDialog(component.Component):
             options["add_paused"])
         self.glade.get_widget("chk_prioritize").set_active(
             options["prioritize_first_last_pieces"])
+        self.glade.get_widget("chk_seedmode").set_active(
+            options["seed_mode"])
         self.glade.get_widget("chk_move_completed").set_active(
             options["move_completed"])
 
@@ -460,6 +462,8 @@ class AddTorrentDialog(component.Component):
             self.glade.get_widget("chk_paused").get_active()
         options["prioritize_first_last_pieces"] = \
             self.glade.get_widget("chk_prioritize").get_active()
+        options["seed_mode"] = \
+            self.glade.get_widget("chk_seedmode").get_active()
         options["move_completed"] = \
             self.glade.get_widget("chk_move_completed").get_active()
 
@@ -518,6 +522,7 @@ class AddTorrentDialog(component.Component):
             self.core_config["add_paused"])
         self.glade.get_widget("chk_prioritize").set_active(
             self.core_config["prioritize_first_last_pieces"])
+        self.glade.get_widget("chk_seedmode").set_active(False)
         self.glade.get_widget("chk_move_completed").set_active(
             self.core_config["move_completed"])
 
