@@ -63,7 +63,7 @@ Deluge.add.OptionsTab = Ext.extend(Ext.form.FormPanel, {
         this.optionsManager.bind('download_location', fieldset.add({
             fieldLabel: '',
             name: 'download_location',
-            width: 400,
+            anchor:'95%',
             labelSeparator: ''
         }));
 
@@ -80,7 +80,7 @@ Deluge.add.OptionsTab = Ext.extend(Ext.form.FormPanel, {
         var field = fieldset.add({
             fieldLabel: '',
             name: 'move_completed_path',
-            width: 425
+            anchor:'98%'
         });
         this.optionsManager.bind('move_completed', field.toggle)
         this.optionsManager.bind('move_completed_path', field.input)
@@ -168,6 +168,24 @@ Deluge.add.OptionsTab = Ext.extend(Ext.form.FormPanel, {
 			fieldLabel: '',
 			labelSeparator: ''
 		}));
+        this.optionsManager.bind('sequential_download', fieldset.add({
+            name: 'sequential_download',
+            boxLabel: _('Sequential Download'),
+            fieldLabel: '',
+            labelSeparator: ''
+        }));
+        this.optionsManager.bind('seed_mode', fieldset.add({
+            name: 'seed_mode',
+            boxLabel: _('Skip File Hash Check'),
+            fieldLabel: '',
+            labelSeparator: ''
+        }));
+        this.optionsManager.bind('pre_allocate_storage', fieldset.add({
+            name: 'pre_allocate_storage',
+            boxLabel: _('Preallocate Disk Space'),
+            fieldLabel: '',
+            labelSeparator: ''
+        }));
 	},
 
 	getDefaults: function() {
